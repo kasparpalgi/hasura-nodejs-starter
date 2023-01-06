@@ -1,2 +1,2 @@
-# hasura-nodejs-starter
- This is the hasura bolerplate that works with nodejs-express-typescript-hasura-starter
+# hasura-nodejs-express-boilerplate
+This is the Hasura bolerplate that works with nodejs-express-typescript-hasura-starter

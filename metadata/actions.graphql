@@ -1,0 +1,71 @@
+type Mutation {
+  invite(
+    email: String!
+    role: String!
+  ): SuccessResponse!
+}
+
+type Mutation {
+  login(
+    email: String!
+    password: String!
+  ): JWTResponse
+}
+
+type Query {
+  me: UserResponse
+}
+
+type Mutation {
+  refresh(
+    refresh_token: String!
+  ): JWTResponse
+}
+
+type Mutation {
+  register(
+    user: RegisterUser!
+  ): SuccessResponse
+}
+
+type Mutation {
+  request_reset_password(
+    email: String!
+  ): SuccessResponse
+}
+
+type Mutation {
+  reset_password(
+    ticket: String!
+    password: String!
+  ): SuccessResponse
+}
+
+input RegisterUser {
+  ticket: uuid!
+  first_name: String!
+  last_name: String!
+  avatar_url: String!
+  password: String!
+  email: String!
+}
+
+type JWTResponse {
+  token: String!
+  refresh_token: String!
+}
+
+type SuccessResponse {
+  value: String!
+}
+
+type UserResponse {
+  id: uuid!
+  account_id: uuid!
+  email: String!
+  first_name: String!
+  last_name: String!
+  avatar_url: String!
+  roles: [String!]!
+}
+

@@ -1,0 +1,13 @@
+table:
+  name: users
+  schema: public
+object_relationships:
+- name: account
+  using:
+    manual_configuration:
+      column_mapping:
+        id: user_id
+      insertion_order: null
+      remote_table:
+        name: accounts
+        schema: public
